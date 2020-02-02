@@ -21,7 +21,7 @@ class User extends Model implements AuthenticatableContract, AuthorizableContrac
      * @var array
      */
     protected $fillable = [
-        'id', 'name', 'email', 'password'
+        'id', 'name', 'email', 'password', 'deparment_id'
     ];
 
     /**
@@ -51,5 +51,9 @@ class User extends Model implements AuthenticatableContract, AuthorizableContrac
     public function getJWTCustomClaims()
     {
         return [];
+    }
+
+    public function deparment(){
+        return $This->belongsTo('App\Models\Department');
     }
 }

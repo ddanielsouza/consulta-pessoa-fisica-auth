@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\User;
+use App\Models\Department;
 use \Auth;
 use Illuminate\Http\Request;
 class UserController extends Controller
@@ -92,7 +93,9 @@ class UserController extends Controller
     public function me()
     {
         try{
-            return response()->json(['success' => true, 'data' => Auth::user()], 200);
+            $user = Auth::user();
+            $user->department = Department::select(['description', 'bureau'])->find($user->department_id);
+            return response()->json(['success' => true, 'data' => $user], 200);
         }catch(\Exception $e){
             return response()->json([
                 'success' => false,
