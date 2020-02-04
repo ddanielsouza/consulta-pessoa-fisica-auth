@@ -14,6 +14,7 @@ A arquitetura adotada para os microsserviços foi a de login unico (Single sign-
 
 ### Pré-Requisitos
 * Docker (Aqui demonstrarei como executar o projeto apenas no docker)
+* git
 
 ### Executando o projeto
 
