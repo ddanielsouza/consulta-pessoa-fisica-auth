@@ -29,3 +29,7 @@ A arquitetura adotada para os microsserviços foi a de login unico (Single sign-
     * ``` docker build -t auth . ```
 3. Rodando
     * ``` docker run -itd -p 8000:80 --name auth --link pgsql auth ```
+    
+Após executar será criado um usuário com os seguintes dados:
+    <br> email: daniell.oliveirra@gmail.com
+    <br> senha: 123456
